@@ -1,0 +1,138 @@
+/* 
+
+40AB88 - Keppel - Main Brand
+7787A3 - Bermuda Gray - Light Accent
+F4F7F5 - Desert Storm - Light Shades
+B14057 - HippiePink - Dark Accent
+323438 - Shark - Dark Shades
+
+*/
+
+:root {
+    --keppel: #40AB88;
+    --bermuda-grey: #7787A3;
+    --hippie-pink: #B14057;
+    --shark: #323438;
+    --desert-storm: #F4F7F5;
+
+    --keppel-light: #51c29d;
+    --dark-shark: #202123;
+
+    --info: #2e3134;
+    --success: #47ad61;
+    --warning: #c49d29;
+    --danger: #f44336;
+  }
+
+.card {
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: "Catamaran";
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: var(--desert-storm);
+    background-color: var(--shark);
+    margin: 0px;
+}
+
+.basic-font{
+    font-family: "Catamaran";
+    font-size: 18px;
+}
+
+.h-font{
+    font-family: "Montserrat";
+    font-size: 48px;
+}
+
+.h2-font{
+    font-family: "GentiumPlus";
+    font-size: 32px;
+}
+
+.fill-dark, .fill-light, .fill-primary, .fill-highlight1, .fill-highlight2, .fill-light-secondary, .fill-dark-secondary {
+    transition: background-color 1s;
+}
+
+.col {
+    display: inline-block;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+.content {
+    padding: 15px !important;
+}
+
+.row.masonry {
+    -moz-column-width: 24em;
+    -webkit-column-width: 24em;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    margin: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.flex {
+    display: flex;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-green{
+    padding: 15px 18px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: var(--keppel);
+    color: var(--desert-storm);
+    will-change: box-shadow, transform;
+    border: none;
+}
+
+.btn-green:hover{
+    background-color: var(--keppel-light);
+}
+
+.input-dark{
+    border: var(--desert-storm) solid 2px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 15px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+    color: var(--desert-storm);
+  }
+  
+  .input-dark:focus {
+    background-color: rgb(255, 255, 255, 0.1);
+    border: lightgrey solid 2px;
+  }
+
+  .box{
+    min-height: 600px;
+  }
+
+  

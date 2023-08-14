@@ -1,0 +1,25 @@
+.footer{
+    background-color: var(--dark-shark);
+    color: var(--desert-storm);
+    padding: 20px 20px;
+    font-size: 20px;
+}
+
+
+.footer-text {
+    align-self: center;
+    order: 2;
+    font-size: 20px;
+    text-align: right;
+ }
+
+.footer-text span {
+    font-weight: bold;
+}
+.container{
+    justify-content: space-between;
+}
+.logo{
+    height: 60px;
+    order: 1;
+}

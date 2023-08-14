@@ -1,0 +1,1 @@
+{"version":3,"file":"extras.router.js","sourceRoot":"","sources":["../../src/routers/extras.router.ts"],"names":[],"mappings":";;;;;AAAA,sDAA6B;AAC7B,wEAAkE;AAElE,MAAM,YAAY,GAAG,iBAAO,CAAC,MAAM,EAAE,CAAC;AAEtC,YAAY,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC,GAAG,CACvB,CAAC,GAAG,EAAE,GAAG,EAAE,EAAE,CAAC,IAAI,mCAAe,EAAE,CAAC,MAAM,CAAC,GAAG,EAAE,GAAG,CAAC,CACvD,CAAA;AAED,kBAAe,YAAY,CAAA"}

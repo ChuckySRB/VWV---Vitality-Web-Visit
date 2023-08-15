@@ -8,14 +8,17 @@
     padding: 10px;
     text-align: center;
     margin: 30px;
+    font-weight: 400;
+    color: var(--dark-grey);
 }
 .card{
-    background-color: var(--dark-shark);
+    background-color: var(--dark-accent);
     width: 30%;
     display: flex;
     padding: 25px;
     margin: 20px;
     font-size: 16px;
+    color: var(--light);
 }
 
 .form-box{

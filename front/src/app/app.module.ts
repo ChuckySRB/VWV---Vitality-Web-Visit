@@ -14,6 +14,7 @@ import { ObjectsComponent } from './pages/objects/objects.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     AgenciesComponent,
     WorkersComponent,
     ObjectsComponent,
-    JobsComponent
+    JobsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

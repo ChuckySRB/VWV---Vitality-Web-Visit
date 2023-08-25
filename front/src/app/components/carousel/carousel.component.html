@@ -1,0 +1,12 @@
+<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
+[showNavigationIndicators]="showNavigationIndicators">
+	<ng-template ngbSlide *ngFor="let image of images">
+		<div class="picsum-img-wrapper">
+			<img [src]="image"/>
+		</div>
+		<div class="carousel-caption">
+			<h3>Ordinacija Vitality</h3>
+			<p>Čuvanje tela je čuvanje hrama duše!</p>
+		</div>
+	</ng-template>
+</ngb-carousel>

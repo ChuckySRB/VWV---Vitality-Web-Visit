@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,10 @@ import { ObjectsComponent } from './pages/objects/objects.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,13 +32,15 @@ import { HomeComponent } from './home/home.component';
     WorkersComponent,
     ObjectsComponent,
     JobsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    CarouselComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,40 @@
+.carusel {
+    max-width: 1230px;
+    align-self: center;
+    padding: 50px;
+}
+
+.carusel-row{
+    align-self: center;
+    width: 100%;
+    background-color: var(--light-accent);
+}
+
+.opis{
+    padding: 35px;
+    background-color: var(--keppel);
+    color: var(--light);
+    font-size: 31px;
+    text-align: center;
+}
+
+.opis ul{
+    padding: 20px;
+    font-size: 15px; 
+}
+.opis-li{
+    padding: 10px;
+    font-size: 25px;
+    color: var(--light);
+    text-align: left;
+}
+
+.header-row{
+    padding: 50px;
+}
+
+h1 {
+    color: var(--dark-accent);
+    font-weight: 400;
+    padding: 20px 20px 100px 20px;
+}

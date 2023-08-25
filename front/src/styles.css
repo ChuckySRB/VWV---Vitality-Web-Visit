@@ -111,6 +111,11 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 .flex {
     display: flex;
 }
+.flex-column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .flex-center {
     display: flex;
     justify-content: center;

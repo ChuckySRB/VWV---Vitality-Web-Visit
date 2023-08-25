@@ -1,0 +1,26 @@
+[
+    {
+        "patient": "ChuckySRB",
+        "doctor": "RolgSRB",
+        "type": "neurology",
+        "datetime": "2022-03-15 10:00",
+        "duration": "60",
+        "status": "scheduled"
+    },
+    {
+        "patient": "caki",
+        "doctor": "Zabuza",
+        "type": "ophthalmology",
+        "datetime": "2022-03-16 14:30",
+        "duration": "30",
+        "status": "scheduled"
+    },
+    {
+        "patient": "ChuckySRB",
+        "doctor": "Zabuza",
+        "type": "ophthalmology",
+        "datetime": "2022-03-17 11:00",
+        "duration": "45",
+        "status": "completed"
+    }
+]

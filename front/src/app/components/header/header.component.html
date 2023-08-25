@@ -2,20 +2,20 @@
     <div class="header-bg">
     <nav class="navbar">
       <ul class="navbar-links">
-        <li *ngIf="user=='agency' || user=='none'"></li>
-        <li *ngIf="user=='user' || user=='agency'"><a href="profil" class="nav-link">Profil</a></li>
-        <li *ngIf="user=='user'"><a href="objekti" class="nav-link">Objekti</a></li>     
+        <li *ngIf="user=='doctor' || user=='none'"></li>
+        <li *ngIf="user=='patient' || user=='doctor'"><a href="profil" class="nav-link">Profil</a></li>
+        <li *ngIf="user=='patient'"><a href="objekti" class="nav-link">Objekti</a></li>     
         <li id = "logo" class="navbar-logo">
             <a href=""> <img src="../../../assets/logo/vwv-text.png" alt="Logo"></a>
         </li>
-        <li *ngIf="user=='user' || user=='none'"><a href="agencije" class="nav-link">Agencije</a></li>
-        <li *ngIf="user=='agency'"><a href="radnici" class="nav-link">Radnici</a></li>
-        <li *ngIf="user=='user' || user=='agency'"><a href="poslovi" class="nav-link">Poslovi</a></li>
+        <li *ngIf="user=='patient' || user=='none'"><a href="agencije" class="nav-link">Agencije</a></li>
+        <li *ngIf="user=='doctor'"><a href="radnici" class="nav-link">Radnici</a></li>
+        <li *ngIf="user=='patient' || user=='doctor'"><a href="poslovi" class="nav-link">Poslovi</a></li>
       </ul>
     </nav>
     <div class="login-logout">
-        <button *ngIf="loged == true" class="btn-green" (click)="Logout()">Log out</button>
-        <div *ngIf="loged == false" class = "login-register">
+        <button *ngIf="user != 'none'" class="btn-green" (click)="Logout()">Log out</button>
+        <div *ngIf="user == 'none'" class = "login-register">
             <a href="register" class = "register">Register</a>
             <button class="btn-green" (click)="Login()">Log in</button>
         </div>

@@ -1,1 +1,46 @@
-<p>register works!</p>
+<div class = "background">
+    <div class = "box column background-overlay">
+     
+        <div class = "h-font">Registracija</div>
+        <div class="card">
+            
+    
+        <form>
+            <div class="label">Korisnicko ime</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="username" name = "username" [(ngModel)] = "username"/></div>
+            <div class="label">Email</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="email" name = "slika" [(ngModel)] = "email"/></div>
+            <div class="label">Lozinka</div>
+            <div class="input"><input type="password" class="input-dark" placeholder="password" name = "email" [(ngModel)] = "password"/></div>
+            <div class="label">Potvrda lozinke</div>
+            <div class="input"><input type="password" class="input-dark" placeholder="confirm password" name = "password" [(ngModel)] = "cpassword"/></div>
+            <div class="label">Ime</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="firstname" name = "cpassword" [(ngModel)] = "name"/></div>
+            <div class="label">Prezime</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="lastname" name = "name" [(ngModel)] = "surname"/></div>
+            <div class="label">Telefon</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="phone" name = "surname" [(ngModel)] = "phone"/></div>
+            <div class="label">Profilna slika</div>
+            <div class="input"><input type="file" class="file-input-dark" placeholder="image" name = "phone" (change)="onFileChange($event)"/></div>
+            <div class="label">Tip korisnika</div>
+            <div class="input">
+            <select class="select-dark" name="type" [(ngModel)]="type">
+                <option value="patient">Pacijent</option>
+                <option value="doctor">Doktor</option>
+            </select>
+            </div>
+            <div *ngIf="type == 'doctor'" class= "input-doctor">
+                <div class="label">Broj Licence</div>
+                <div class="input"><input type="text" class="input-dark" placeholder="license" name = "license" [(ngModel)] = "license"/></div>
+                <div class="label">Specijalizacija</div>
+                <div class="input"><input type="text" class="input-dark" placeholder="specialization" name = "specialization" [(ngModel)] = "specialization"/></div>
+                <div class="label">Odeljenje</div>
+                <div class="input"><input type="text" class="input-dark" placeholder="department" name = "department" [(ngModel)] = "department"/></div>
+            </div>
+
+            <button class="btn-green" name = "register" (click) = "Register()">Register</button>
+        </form>
+                 
+        </div>  
+    </div>
+    </div>

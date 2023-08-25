@@ -5,7 +5,7 @@ const userRouter = express.Router()
 userRouter.route('/login').post(
     (req, res) => new UsersCotroller().login(req, res)
 )
-userRouter.route('/').get(
-    (req, res) => new UsersCotroller().test(req, res)
+userRouter.route('/register').post(
+    (req, res) => new UsersCotroller().register(req, res)
 )
 export default userRouter

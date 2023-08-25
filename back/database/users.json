@@ -2,63 +2,53 @@
     {
         "username": "ChuckySRB",
         "password" : "123",
-		"type": "client",
+		"type": "patient",
 		"phone": "060/05-09-011",
         "email" : "chucky.srb@gmail.com",
-		"client_info": {
-			"name": "Časlav",
-			"surname": "Petronić"
-		},
+		"name": "Časlav",
+		"surname": "Petronić",
 		"image": ""
     },
     {
         "username": "caki",
         "password" : "123",
-		"type": "client",
+		"type": "patient",
 		"phone": "0600009011",
         "email" : "caslav.petronic@gmail.com",
-		"client_info": {
-			"name": "Čaki",
-			"surname": "Čale"
-		},
+		"name": "Čaki",
+		"surname": "Čale",
 		"image": ""
     },
     {
         "username": "RolgSRB",
         "password" : "123",
-		"type": "agency",
+		"type": "doctor",
 		"phone": "+3816509011",
         "email" : "caslavpetronic007@gmail.com",
-		"agency_info": {
-			"name": "World of Worlcraft",
-			"address": {
-				"country": "Srbija",
-				"city": "Beograd",
-				"street": "Gospodara Vučića",
-				"number": "18a"
-			},
-			"id": "05A111221",
-			"description": "Ova agencija iznajmljuje prosotor u svim delovima Beograda",
+		"doctor_info": {
+			"license": "1054863a",
+			"specialization": "brain",
+			"department": "neurology"
 		},
 		"image": ""
     },
     {
         "username": "Zabuza",
         "password" : "123",
-		"type": "agency",
+		"type": "doctor",
 		"phone": "+38169011",
         "email" : "zabuza@gmail.com",
-		"agency_info": {
-			"name": "Agency hiden in Mist",
-			"address": {
-				"country": "Jemen",
-				"city": "Jemen",
-				"street": "Jemen Street",
-				"number": "1"
-			},
-			"id": "012BB1221",
-			"description": "Indonezija vam je na usluzi",
+		"doctor_info": {
+			"license": "1054863a",
+			"specialization": "eyes",
+			"department": "ophthalmology"
 		},
 		"image": ""
+    },
+	{
+        "username": "Admin",
+        "password" : "admin123",
+		"type": "menager",
+        "email" : "admin@gmail.com"
     }
 ]

@@ -1,0 +1,62 @@
+.box{
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+.h-font{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    margin: 30px;
+    font-weight: 400;
+    color: var(--dark-grey);
+}
+.card{
+    background-color: var(--dark-accent);
+    width: 30%;
+    display: flex;
+    padding: 25px;
+    margin: 20px;
+    font-size: 16px;
+    color: var(--light);
+}
+
+.form-box{
+    text-align: left;
+    width: 100%;
+    justify-content: space-between;
+}
+
+input{
+    width: 100%;
+}
+.input{
+    width: 80%;
+    padding: 10px;
+}
+
+.input-doctor{
+    width: 90%;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.label{
+    padding: 15px 8px 0px 8px;
+    font-weight: bold;
+}
+form{
+    width: 100%;
+}
+.btn-green{
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+
+
+
+  
+  

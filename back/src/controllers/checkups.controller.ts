@@ -1,10 +1,16 @@
 import e from "express"
 import express, { Response } from "express"
-import Orders from "../models/orders"
-import Extras from "../models/extras"
+import CheckUp from "../models/checkups"
 
-export class OrdersCotroller{
+export class CheckUpsCotroller{
+    getAllCheckUps = (req: express.Request, res: express.Response)=>{
+        CheckUp.find({}, (err, checkups)=>{
+            if(err) console.log(err)
+            else res.json(checkups)
+        })
+    }   
 
+    /*
     getOrders = (req: express.Request, res: express.Response)=>{
         let user = req.body.user
         if (user == null){
@@ -89,4 +95,5 @@ export class OrdersCotroller{
 
         
     }
+    */
 }

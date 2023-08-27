@@ -10,7 +10,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent {
   constructor (private router: Router, private userService: UserService){
-
   }
 
   username: string = ""

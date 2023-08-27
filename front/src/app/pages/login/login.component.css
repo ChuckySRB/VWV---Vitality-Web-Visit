@@ -13,7 +13,7 @@
 }
 .card{
     background-color: var(--dark-accent);
-    width: 30%;
+    width: 520px;
     display: flex;
     padding: 25px;
     margin: 20px;
@@ -46,6 +46,16 @@ form{
     margin-left: 12px;
 }
 
+@media (max-width: 650px){
+    .card{
+        width: 90%;
+
+    }
+
+    .input{
+        width: 90%;
+    }
+}
 
 
 

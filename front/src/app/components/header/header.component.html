@@ -2,15 +2,15 @@
     <div class="header-bg">
     <nav class="navbar">
       <ul class="navbar-links">
-        <li *ngIf="user=='doctor' || user=='none'"></li>
         <li *ngIf="user=='patient' || user=='doctor'"><a href="profil" class="nav-link">Profil</a></li>
-        <li *ngIf="user=='patient'"><a href="objekti" class="nav-link">Objekti</a></li>     
+        <li *ngIf="user=='patient' || user=='none'"><a href="lekari" class="nav-link">Lekari</a></li>
+        <li *ngIf="user=='doctor'"><a href="lekar/pregledi" class="nav-link">Pregledi</a></li>     
         <li id = "logo" class="navbar-logo">
             <a href=""> <img src="../../../assets/logo/vwv-text.png" alt="Logo"></a>
         </li>
-        <li *ngIf="user=='patient' || user=='none'"><a href="agencije" class="nav-link">Agencije</a></li>
-        <li *ngIf="user=='doctor'"><a href="radnici" class="nav-link">Radnici</a></li>
-        <li *ngIf="user=='patient' || user=='doctor'"><a href="poslovi" class="nav-link">Poslovi</a></li>
+        <li *ngIf="user=='patient'"><a href="pacijent/pregledi" class="nav-link">Pregledi</a></li>
+        <li *ngIf="user=='doctor'"><a href="lekar/razno" class="nav-link">Razno</a></li>
+        <li *ngIf="user=='patient' || user=='none' || user=='doctor'"></li>
       </ul>
     </nav>
     <div class="login-logout">

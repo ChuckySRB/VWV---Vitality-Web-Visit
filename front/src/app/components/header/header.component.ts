@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     else{ 
       this.userService.showElement$.subscribe(value => {
         this.user = value;
-      });
+      })
       this.user = "none"
     }
     
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   Logout(){
     localStorage.clear()
-    this.userService.setShowElement("none")
+    this.user = "none"
     this.router.navigate(['login'])
   }
 

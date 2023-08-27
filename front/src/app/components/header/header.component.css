@@ -52,7 +52,7 @@
   text-decoration: none;
   color: var(--keppel);
   margin: 0 10px;
-  font-size: 25px;
+  font-size: 30px;
   transition: font-size 0.3s;
 }
 
@@ -86,4 +86,19 @@
 }
 .register:hover{
   color:var(--light-grey);
+}
+
+@media (max-width: 810px){
+  .navbar-links{
+      width: 90%;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .navbar-logo{
+    padding: 20px 15px 30px 15px;
+  }
+  .nav-link{
+    padding: 12px;
+  }
+
 }

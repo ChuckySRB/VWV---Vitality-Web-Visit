@@ -21,7 +21,7 @@ export class UserService {
 
   }
 
-  register(username: string, password: string, email: string, type: string, phone: string, name: string, surname: string, image: File, license: string, specialization: string, department: string){
+  register(username: string, password: string, email: string, type: string, phone: string, name: string, surname: string, image: string, license: string, specialization: string, department: string){
     const data = {
       username: username,
       password: password,
@@ -32,7 +32,8 @@ export class UserService {
       surname: surname,
       license: license,
       specialization: specialization,
-      department: department
+      department: department,
+      image: image
     }
 
     return this.http.post(`${this.uri}/user/register`, data)

@@ -11,8 +11,10 @@ const users_router_1 = __importDefault(require("./routers/users.router"));
 const checkups_router_1 = __importDefault(require("./routers/checkups.router"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
-app.use(express_1.default.json());
-app.use(body_parser_1.default.json());
+app.use(express_1.default.json({ limit: '50mb' }));
+app.use(express_1.default.urlencoded({ limit: '50mb' }));
+app.use(body_parser_1.default.json({ limit: '50mb' }));
+app.use(body_parser_1.default.urlencoded({ limit: '50mb', extended: true }));
 mongoose_1.default.connect('mongodb://127.0.0.1:27017/VirtualWebVisit');
 const connection = mongoose_1.default.connection;
 connection.once('open', () => {

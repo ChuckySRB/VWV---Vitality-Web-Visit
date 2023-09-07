@@ -15,7 +15,8 @@ const User = new mongoose_1.Schema({
         specialization: { type: String },
         department: { type: String }
     },
-    image: { type: String }
+    image: { type: String },
+    status: { type: String }
 });
 exports.default = (0, mongoose_1.model)('User', User, 'users');
 //# sourceMappingURL=users.js.map

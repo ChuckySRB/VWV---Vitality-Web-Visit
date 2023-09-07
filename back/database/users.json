@@ -7,7 +7,8 @@
         "email" : "chucky.srb@gmail.com",
 		"name": "Časlav",
 		"surname": "Petronić",
-		"image": ""
+		"image": "",
+		"status": "active"
     },
     {
         "username": "caki",
@@ -17,7 +18,8 @@
         "email" : "caslav.petronic@gmail.com",
 		"name": "Čaki",
 		"surname": "Čale",
-		"image": ""
+		"image": "",
+		"status": "pending"
     },
     {
         "username": "RolgSRB",
@@ -30,7 +32,8 @@
 			"specialization": "brain",
 			"department": "neurology"
 		},
-		"image": ""
+		"image": "",
+		"status": "active"
     },
     {
         "username": "Zabuza",
@@ -43,7 +46,8 @@
 			"specialization": "eyes",
 			"department": "ophthalmology"
 		},
-		"image": ""
+		"image": "",
+		"status": "active"
     },
 	{
         "username": "Admin",

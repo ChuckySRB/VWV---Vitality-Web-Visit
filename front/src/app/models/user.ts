@@ -2,7 +2,6 @@ export class User{
     name?: string;
     surname?: string;
     username: string;
-    password: string;
     type: string;
     phone?: string;
     email: string;
@@ -12,4 +11,5 @@ export class User{
         department?: string;
     };
     image?: string;
+    message?: string;
 }

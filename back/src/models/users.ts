@@ -15,7 +15,8 @@ const User = new Schema({
         specialization: { type: String},
         department: { type: String}
     },
-    image: { type: String }
+    image: { type: String },
+    status: { type: String }
 });
 
 

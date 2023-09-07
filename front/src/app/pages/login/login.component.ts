@@ -14,17 +14,18 @@ export class LoginComponent {
 
   username: string = ""
   password: string = ""
+  message: string = ""
 
   Login(){
     this.userService.login(this.username, this.password).subscribe((user: User)=>{
-      if(user!=null){
+      if(user!=null && !user.message){
         localStorage.setItem('user', JSON.stringify(user))
         this.userService.setShowElement(user.type)
         //location.reload();
         this.router.navigate([""])
       }
       else{
-        alert("Error!")
+        this.message = user.message
       }
     })
   }

@@ -21,7 +21,7 @@
             <div class="label">Telefon</div>
             <div class="input"><input type="text" class="input-dark" placeholder="phone" name = "surname" [(ngModel)] = "phone"/></div>
             <div class="label">Profilna slika</div>
-            <div class="input"><input type="file" class="file-input-dark" placeholder="image" name = "phone" (change)="onFileChange($event)"/></div>
+            <div class="input"><input type="file" class="file-input-dark" placeholder="image" name = "phone" (change)="onFileChange($event)"/> <img *ngIf = "imageUrl" class="file-input-image" [src]="imageUrl"></div>
             <div class="label">Tip korisnika</div>
             <div class="input">
             <select class="select-dark" name="type" [(ngModel)]="type">
@@ -39,6 +39,7 @@
             </div>
 
             <button class="btn-green" name = "register" (click) = "Register()">Register</button>
+            <p class= "message">{{message}}</p>
         </form>
                  
         </div>  

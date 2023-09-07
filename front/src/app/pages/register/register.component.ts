@@ -11,6 +11,13 @@ export class RegisterComponent {
   constructor (private router: Router, private userService: UserService){
   }
 
+  ngOnInit(): void {
+    this.reader.onload = () => {
+      this.imageUrl = this.reader.result as string;
+    };
+  }
+
+  reader: FileReader = new FileReader()
   username: string = ""
   password: string = ""
   cpassword: string = ""
@@ -23,26 +30,30 @@ export class RegisterComponent {
   specialization: string = ""
   department: string = ""
   image: File = null
-  
+  imageUrl: string = ""
+  message: string = ""
 
   Register(){
     if (this.password != this.cpassword){
 
     }
     else{
-      this.userService.register(this.username, this.password, this.email, this.type, this.phone, this.name, this.surname, this.image, this.license, this.specialization, this.department).subscribe((message: string)=>{
-        if(message!=null){
+      this.userService.register(this.username, this.password, this.email, this.type, this.phone, this.name, this.surname, this.imageUrl, this.license, this.specialization, this.department).subscribe((message: {message: string})=>{
+        if(message && message.message == 'ok'){
           this.router.navigate(["login"])
         }
         else{
-          alert("Error!")
+          this.message = message.message
         }
       })
     }
   }
 
   onFileChange(event: any) {
-    const file = event.target.files[0];
-    // Implement logic for handling the selected file
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.image = input.files[0];
+      this.reader.readAsDataURL(this.image);
+    }
   }
 }

@@ -8,4 +8,7 @@ userRouter.route('/login').post(
 userRouter.route('/register').post(
     (req, res) => new UsersCotroller().register(req, res)
 )
+userRouter.route('/doctors').get(
+    (req, res) => new UsersCotroller().allDoctors(req, res)
+)
 export default userRouter

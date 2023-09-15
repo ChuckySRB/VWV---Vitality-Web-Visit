@@ -30,7 +30,6 @@ import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.componen
     RegisterComponent,
     ProfileComponent,
     HomeComponent,
-    DoctorsTableComponent,
     DoctorsComponent,
     CheckupsPatientComponent,
     CheckupsDoctorComponent,
@@ -42,7 +41,8 @@ import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.componen
     FormsModule,
     HttpClientModule,
     NgbModule,
-    CarouselComponent
+    CarouselComponent,
+    DoctorsTableComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

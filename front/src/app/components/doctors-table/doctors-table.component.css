@@ -1,0 +1,42 @@
+.profilna{
+    width: 114px;
+    padding: 16px;
+    border-radius: 25px;
+}
+
+.profile{
+    display: flex;
+    justify-content: left;
+}
+
+.text-holder {
+    justify-items: right;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.name-holder {
+    display: flex;
+    justify-content: space-around;
+    font-size: 26px;
+    color: rgb(20, 22, 21);
+}
+
+.field{
+    font-size: 23px;
+    color: rgb(20, 22, 21);
+}
+
+.name{
+    padding: 2px;
+}
+.surname{
+    padding: 2px;
+}
+
+.specialization{
+    font-size: 20px;
+    color: var(--keppel-dark);
+    padding: 2px;
+}

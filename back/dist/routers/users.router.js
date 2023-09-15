@@ -8,5 +8,6 @@ const users_controller_1 = require("../controllers/users.controller");
 const userRouter = express_1.default.Router();
 userRouter.route('/login').post((req, res) => new users_controller_1.UsersCotroller().login(req, res));
 userRouter.route('/register').post((req, res) => new users_controller_1.UsersCotroller().register(req, res));
+userRouter.route('/doctors').get((req, res) => new users_controller_1.UsersCotroller().allDoctors(req, res));
 exports.default = userRouter;
 //# sourceMappingURL=users.router.js.map

@@ -15,6 +15,28 @@ class CheckUpsCotroller {
                     res.json(checkups);
             });
         };
+        this.createCheckUp = (req, res) => {
+        };
+        this.getMyCheckUps = (req, res) => {
+            const type = req.body.type;
+            const user = req.body.user;
+            if (type == 'doctor') {
+                checkups_1.default.find({ 'doctor': user }).exec((err, checkUps) => {
+                    if (err)
+                        console.log(err);
+                    else
+                        res.json(checkUps);
+                });
+            }
+            else {
+                checkups_1.default.find({ 'patient': user }).exec((err, checkUps) => {
+                    if (err)
+                        console.log(err);
+                    else
+                        res.json(checkUps);
+                });
+            }
+        };
         /*
         getOrders = (req: express.Request, res: express.Response)=>{
             let user = req.body.user

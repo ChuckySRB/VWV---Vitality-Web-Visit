@@ -95,6 +95,17 @@ class UsersCotroller {
                 }
             });
         };
+        this.allDoctors = (req, res) => {
+            users_1.default.find({ 'type': 'doctor' }).select('-password').exec((err, doctors) => {
+                if (err) {
+                    console.log(err);
+                    res.status(400).json({ "message": "error" });
+                }
+                else {
+                    res.json(doctors);
+                }
+            });
+        };
     }
 }
 exports.UsersCotroller = UsersCotroller;

@@ -1,5 +1,6 @@
 import express from "express"
 import User from "../models/users"
+import { log } from "console";
 
 export class UsersCotroller{
     login = (req: express.Request, res: express.Response)=>{
@@ -92,6 +93,19 @@ export class UsersCotroller{
                     })
                 }
             }
+            })
+    }
+
+    allDoctors = (req: express.Request, res: express.Response)=>{
+        User.find({'type':'doctor'}).select('-password').exec((err, doctors) => {
+            if (err){
+                console.log(err);
+                res.status(400).json({"message": "error"})
+            }
+            else{
+                res.json(doctors)
+            }
         })
     }
+    
 }

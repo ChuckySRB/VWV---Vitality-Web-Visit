@@ -38,6 +38,12 @@ export class UserService {
 
     return this.http.post(`${this.uri}/user/register`, data)
   }
+
+  getDoctors(){
+    return this.http.get(`${this.uri}/user/doctors`)
+  }
+
+
   private showElementSubject = new BehaviorSubject<string>("none");
   showElement$ = this.showElementSubject.asObservable();
 

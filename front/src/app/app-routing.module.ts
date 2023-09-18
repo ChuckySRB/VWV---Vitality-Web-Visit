@@ -8,6 +8,7 @@ import { CheckupsDoctorComponent } from './pages/checkups-doctor/checkups-doctor
 import { CheckupsPatientComponent } from './pages/checkups-patient/checkups-patient.component';
 import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.component';
 import { DoctorsComponent } from './pages/doctors/doctors.component';
+import { NotificationsPatientComponent } from './pages/notifications-patient/notifications-patient.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: "pacijent/profil", component: ProfileComponent},
   {path: "lekar/pregledi", component: CheckupsDoctorComponent},
   {path: "pacijent/pregledi", component: CheckupsPatientComponent},
+  {path: "pacijent/obaveštenja", component: NotificationsPatientComponent},
   {path: "lekar/razno", component: OtherDoctorComponent},
   {path: "lekari", component: DoctorsComponent}
 

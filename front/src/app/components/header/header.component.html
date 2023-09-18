@@ -10,7 +10,8 @@
         </li>
         <li *ngIf="user=='patient'"><a href="pacijent/pregledi" class="nav-link">Pregledi</a></li>
         <li *ngIf="user=='doctor'"><a href="lekar/razno" class="nav-link">Razno</a></li>
-        <li *ngIf="user=='patient' || user=='none' || user=='doctor'"></li>
+        <li *ngIf="user=='none' || user=='doctor'"></li>
+        <li *ngIf="user=='patient'"><a href="pacijent/obaveštenja" class="nav-link">Obaveštenja</a></li>
       </ul>
     </nav>
     <div class="login-logout">

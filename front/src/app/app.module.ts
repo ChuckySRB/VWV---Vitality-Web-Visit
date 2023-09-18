@@ -21,6 +21,7 @@ import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { NotificationsPatientComponent } from './pages/notifications-patient/notifications-patient.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatButtonModule} from '@angular/material/button';
     CheckupsPatientComponent,
     CheckupsDoctorComponent,
     OtherDoctorComponent,
+    NotificationsPatientComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,8 @@
   /*background-color: rgba(255, 255, 255, 0.82); *//* Adjust background color and transparency as needed */
   color: var(--keppel);
   text-decoration: underline;
+  width: 1100px;
+  height: 180px;
 }
 #logo{
   width: auto;
@@ -88,7 +90,11 @@
   color:var(--light-grey);
 }
 
-@media (max-width: 810px){
+@media (max-width: 1000px){
+  .navbar{
+    height: auto;
+    width: auto;
+  }
   .navbar-links{
       width: 90%;
       flex-wrap: wrap;

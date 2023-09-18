@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -14,9 +14,11 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, MatTableModule, NgIf],
 })
-export class DoctorsTableComponent {
+export class DoctorsTableComponent implements OnInit{
   displayedColumns: string[] = ['image', 'email', 'phone', 'department']
   dataSource: MatTableDataSource<User>
+  loged_user: User;
+  user: String;
 
   constructor (private router: Router, private userService: UserService){
     
@@ -25,9 +27,28 @@ export class DoctorsTableComponent {
     })
   }
 
+  ngOnInit(): void {
+    this.loged_user = JSON.parse(localStorage.getItem('user'))
+    if (this.loged_user && this.loged_user.type != "none") {
+      this.user = this.loged_user.type
+    }
+    else{ 
+      this.userService.showElement$.subscribe(value => {
+        this.user = value;
+      })
+      this.user = "none"
+    }
+    
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value
     this.dataSource.filter = filterValue.trim().toLowerCase()
   }
+
+  goToDoctor(doctorID: number){
+    if (this.user != 'none'){
+      this.router.navigate(["doctor/"+doctorID]);
+    }
+  } 
 }

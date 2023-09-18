@@ -1,1 +1,22 @@
-<p>profile works!</p>
+<div class="background">
+    <div class = "background-overlay">
+        <div class = "profile card">
+            <div class = "left-side flex-column">
+                <div class = "image-holder">
+                    <img class = "image" *ngIf="loged_user && loged_user.image" [src]="loged_user.image"/>
+                    <img class = "image" *ngIf="!loged_user || !loged_user.image" href="../../../assets/image/user_default.png">
+                </div>  
+                <div class = "fullname flex">
+                    <div class = "name">{{loged_user.name}}</div>
+                    <div class = "surname">{{loged_user.surname}}</div>
+                </div>
+                <div *ngIf="loged_user.type == 'doctor'" class = "specialization">{{loged_user.doctor_info.specialization}}</div>
+            </div>
+            <div class = "user-info">
+                <div class = "info-field">
+                    
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>

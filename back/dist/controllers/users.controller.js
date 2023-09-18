@@ -48,6 +48,7 @@ class UsersCotroller {
                     let lenght = password.length;
                     let isNotValidLenght = lenght < 8 || lenght > 12;
                     let isValidDouble = true;
+                    let status = "active";
                     for (let i = 0, j = 1; j < lenght; i++, j++) {
                         if (password[i] == password[j]) {
                             isValidDouble = false;
@@ -81,7 +82,8 @@ class UsersCotroller {
                             name: name,
                             surname: surname,
                             doctor_info: doc_info,
-                            image: image
+                            image: image,
+                            status: status
                         });
                         user.save((err, resp) => {
                             if (err) {

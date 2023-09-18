@@ -1,0 +1,31 @@
+.profile{
+    background-color: var(--dark-accent);
+    color: var(--light);
+    width: 600px;
+    display: flex;
+    padding: 25px;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.image{
+    width: 400px;
+    border-radius: 40px;
+    border-bottom: solid 10px var(--light);
+    border-top: solid 10px var(--light);
+    padding: 13px;
+}
+
+.image-holder{
+    padding: 50px;
+}
+
+.fullname{
+    font-size: 33px;
+    padding: 2px 15px 15px 15px;
+
+}
+
+.name, .surname{
+    padding: 7px;
+}

@@ -1,22 +1,48 @@
 <div class="background">
     <div class = "background-overlay">
+        <div class="flex-center main">
         <div class = "profile card">
             <div class = "left-side flex-column">
                 <div class = "image-holder">
                     <img class = "image" *ngIf="loged_user && loged_user.image" [src]="loged_user.image"/>
                     <img class = "image" *ngIf="!loged_user || !loged_user.image" href="../../../assets/image/user_default.png">
+                    <div class="button-container-image">
+                        <button class = "edit-image" mat-mini-fab color="success" aria-label="Example icon button with a filter list icon">
+                          <span class="material-icons">edit</span>
+                        </button>
+                    </div>
                 </div>  
                 <div class = "fullname flex">
                     <div class = "name">{{loged_user.name}}</div>
                     <div class = "surname">{{loged_user.surname}}</div>
+                    <div class="button-container">
+                        <button class = "edit" mat-mini-fab color="success" aria-label="Example icon button with a filter list icon">
+                          <span class="material-icons">edit</span>
+                        </button>
+                    </div>
                 </div>
                 <div *ngIf="loged_user.type == 'doctor'" class = "specialization">{{loged_user.doctor_info.specialization}}</div>
-            </div>
-            <div class = "user-info">
-                <div class = "info-field">
-                    
+                <div class="email-holder flex">
+                    <span class="material-icons">mail</span>
+                    <div class="email">{{loged_user.email}}</div>
+                    <div class="button-container">
+                        <button class = "edit" mat-mini-fab color="success" aria-label="Example icon button with a filter list icon">
+                          <span class="material-icons">edit</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="phone-holder flex">
+                    <span class="material-icons">phone</span>
+                    <div class="phone">{{loged_user.phone}}</div>
+                    <div class="button-container">
+                        <button class = "edit" mat-mini-fab color="success" aria-label="Example icon button with a filter list icon">
+                          <span class="material-icons">edit</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+            
         </div> 
     </div>
+</div>
 </div>

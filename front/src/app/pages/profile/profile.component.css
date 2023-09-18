@@ -13,19 +13,61 @@
     border-radius: 40px;
     border-bottom: solid 10px var(--light);
     border-top: solid 10px var(--light);
+    border-left: solid 4px var(--keppel-light);
+    border-right: solid 4px var(--keppel-light);
     padding: 13px;
 }
 
 .image-holder{
     padding: 50px;
+    position: relative;
 }
 
 .fullname{
     font-size: 33px;
     padding: 2px 15px 15px 15px;
+    color: var(--keppel-light);
 
 }
 
-.name, .surname{
+.name, .surname, .email, .phone{
     padding: 7px;
+}
+.email-holder, .phone-holder{
+    
+}
+.edit-image{
+    background-color: var(--keppel);
+}
+.edit{
+    background-color: var(--keppel);
+}
+
+.button-container-image{
+    position: absolute;
+    bottom: 88px;
+    right: 88px;
+}
+.button-container{
+    color: var(--light);
+    
+}
+
+.main{
+    margin: 55px;;
+}
+
+@media  (max-width: 640px) {
+    .profile {
+        width: 95%;
+        margin: 0;
+    }
+
+    .main {
+        margin: 50px 0px 50px 0px;
+    }
+    
+    .image{
+        width: 300px;
+    }
 }

@@ -18,8 +18,9 @@ import { DoctorsComponent } from './pages/doctors/doctors.component';
 import { CheckupsPatientComponent } from './pages/checkups-patient/checkups-patient.component';
 import { CheckupsDoctorComponent } from './pages/checkups-doctor/checkups-doctor.component';
 import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,9 @@ import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.componen
     NgbModule,
     CarouselComponent,
     DoctorsTableComponent,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

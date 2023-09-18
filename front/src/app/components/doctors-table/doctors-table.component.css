@@ -42,7 +42,7 @@
 }
 
 #row:hover {
-    background-color: #deeeea;
+    background-color: var(--keppel-light);
 }
 
 .input-dark{

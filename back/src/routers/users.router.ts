@@ -11,9 +11,6 @@ userRouter.route('/register').post(
 userRouter.route('/confirm').post(
     (req, res) => new UsersCotroller().confirmUser(req, res)
 )
-userRouter.route('/change/image').post(
-    (req, res) => new UsersCotroller().changeImage(req, res)
-)
 userRouter.route('/change/data').post(
     (req, res) => new UsersCotroller().changeData(req, res)
 )

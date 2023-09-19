@@ -72,7 +72,8 @@ export class UsersCotroller{
                         doc_info = {
                             license: req.body.license,
                             specialization: req.body.specialization,
-                            department: req.body.department
+                            department: req.body.department,
+                            checkups: []
                         }
                     }
                     let user = new User({
@@ -110,6 +111,19 @@ export class UsersCotroller{
                 res.json(doctors)
             }
         })
+    }
+
+    confirmUser = (req: express.Request, res: express.Response)=>{
+        
+    }
+    changeImage = (req: express.Request, res: express.Response)=>{
+        
+    }
+    changeData = (req: express.Request, res: express.Response)=>{
+        
+    }
+    updateCheckUps = (req: express.Request, res: express.Response)=>{
+        
     }
     
 }

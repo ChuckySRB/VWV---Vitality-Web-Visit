@@ -8,6 +8,18 @@ userRouter.route('/login').post(
 userRouter.route('/register').post(
     (req, res) => new UsersCotroller().register(req, res)
 )
+userRouter.route('/confirm').post(
+    (req, res) => new UsersCotroller().confirmUser(req, res)
+)
+userRouter.route('/change/image').post(
+    (req, res) => new UsersCotroller().changeImage(req, res)
+)
+userRouter.route('/change/data').post(
+    (req, res) => new UsersCotroller().changeData(req, res)
+)
+userRouter.route('/doctor/update/checkups').post(
+    (req, res) => new UsersCotroller().updateCheckUps(req, res)
+)
 userRouter.route('/doctors').get(
     (req, res) => new UsersCotroller().allDoctors(req, res)
 )

@@ -13,6 +13,9 @@ class UsersCotroller {
             users_1.default.findOne({ 'username': username, 'password': password }, (err, user) => {
                 if (err)
                     console.log(err);
+                else if (!user) {
+                    res.json({ 'message': "Wrong Password or Username!" });
+                }
                 else if (user.status != "active") {
                     console.log("User not active!");
                     res.json({ 'message': "User not active!" });

@@ -67,7 +67,7 @@ export class DoctorsTableComponent implements OnInit{
 
   goToDoctor(doctorID: number){
     if (this.user != 'none'){
-      this.router.navigate(["doctor/"+doctorID]);
+      this.router.navigate(["/lekari/lekar", doctorID]);
     }
   } 
 }

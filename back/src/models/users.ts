@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-
+import CheckUpType from './checkuptypes'
 
 // User model
 const User = new Schema({
@@ -13,7 +13,8 @@ const User = new Schema({
     doctor_info: {
         license: { type: String},
         specialization: { type: String},
-        department: { type: String}
+        department: { type: String},
+        checkups: [{type: CheckUpType}]
     },
     image: { type: String },
     status: { type: String }

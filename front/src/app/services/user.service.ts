@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { CheckUpType } from '../models/checkuptype';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  uri = "http://localhost:4000"
+  uri = "http://localhost:4000/user"
 
   login(username: string, password: string){
     const data = {
@@ -17,7 +18,7 @@ export class UserService {
       password: password
     }
 
-    return this.http.post(`${this.uri}/user/login`, data)
+    return this.http.post(`${this.uri}/login`, data)
 
   }
 
@@ -36,11 +37,40 @@ export class UserService {
       image: image
     }
 
-    return this.http.post(`${this.uri}/user/register`, data)
+    return this.http.post(`${this.uri}/register`, data)
+  }
+
+  changeData(username: string, type: string, phone: string, name: string, surname: string, image: string, license: string, specialization: string){
+    const data = {
+      username: username,
+      role: type,
+      phone: phone,
+      name: name,
+      surname: surname,
+      license: license,
+      specialization: specialization,
+      image: image
+    }
+
+    return this.http.post(`${this.uri}/change/data`, data)
   }
 
   getDoctors(){
-    return this.http.get(`${this.uri}/user/doctors`)
+    return this.http.get(`${this.uri}/doctors`)
+  }
+
+  confirmUser(username: string){
+    const data = {
+      username: username,
+    }
+    return this.http.post(`${this.uri}/confirm`, data)
+  }
+  updateCheckUps(username: string, checkups: CheckUpType[]){
+    const data = {
+      username: username,
+      checkups: checkups
+    }
+    return this.http.post(`${this.uri}/doctor/update/checkups`, data)
   }
 
 

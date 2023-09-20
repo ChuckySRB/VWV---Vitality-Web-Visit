@@ -1,3 +1,5 @@
+import { CheckUpType } from "./checkuptype";
+
 export class User{
     name?: string;
     surname?: string;
@@ -9,6 +11,7 @@ export class User{
         license?: string;
         specialization?: string;
         department?: string;
+        checkups?: CheckUpType[];
     };
     image?: string;
     message?: string;

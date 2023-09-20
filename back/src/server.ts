@@ -4,6 +4,9 @@ import cors from "cors"
 import bodyParse from "body-parser"
 import userRouter from './routers/users.router'
 import checkupsRouter from './routers/checkups.router'
+import reportsRouter from './routers/reports.router'
+import checkUpTypesRouter from './routers/checkuptype.router'
+import departmentRouter from './routers/departments.router'
 
 
 const app = express()
@@ -23,6 +26,10 @@ connection.once('open', ()=>{
 const router = express.Router()
 router.use('/user', userRouter)
 router.use('/checkup', checkupsRouter)
+router.use('/report', reportsRouter)
+router.use('/checkuptype', checkUpTypesRouter)
+router.use('/department', departmentRouter)
+
 
 app.use('/', router)
 

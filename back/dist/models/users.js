@@ -13,7 +13,15 @@ const User = new mongoose_1.Schema({
     doctor_info: {
         license: { type: String },
         specialization: { type: String },
-        department: { type: String }
+        department: { type: String },
+        checkups: [{
+                _id: { type: String },
+                specialization: { type: String },
+                name: { type: String },
+                duration: { type: Number },
+                cost: { type: Number },
+                status: { type: String }
+            }]
     },
     image: { type: String },
     status: { type: String }

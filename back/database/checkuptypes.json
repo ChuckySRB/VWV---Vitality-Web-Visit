@@ -1,0 +1,38 @@
+[
+    {
+      "specialization": "Cardiology",
+      "name": "Heart Checkup",
+      "duration": 45,
+      "cost": 150,
+      "status": "confirmed"
+    },
+    {
+      "specialization": "Dermatology",
+      "name": "Skin Exam",
+      "duration": 30,
+      "cost": 100,
+      "status": "confirmed"
+    },
+    {
+      "specialization": "Orthopedics",
+      "name": "Bone Checkup",
+      "duration": 60,
+      "cost": 200,
+      "status": "confirmed"
+    },
+    {
+      "specialization": "Dentistry",
+      "name": "Teeth Cleaning",
+      "duration": 45,
+      "cost": 120,
+      "status": "confirmed"
+    },
+    {
+      "specialization": "Neurology",
+      "name": "Brain Scan",
+      "duration": 60,
+      "cost": 250,
+      "status": "confirmed"
+    }
+  ]
+  

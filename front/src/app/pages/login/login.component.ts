@@ -22,7 +22,7 @@ export class LoginComponent {
         localStorage.setItem('user', JSON.stringify(user))
         this.userService.setShowElement(user.type)
         //location.reload();
-        this.router.navigate([""])
+        this.router.navigate(["/profil"])
       }
       else{
         this.message = user.message

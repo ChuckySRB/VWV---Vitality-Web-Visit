@@ -29,6 +29,7 @@
                         <button class = "edit" mat-mini-fab color="success" aria-label="Example icon button with a filter list icon">
                           <span class="material-icons">edit</span>
                         </button>
+                        
                     </div>
                 </div>
                 <div class="phone-holder flex">
@@ -43,6 +44,28 @@
             </div>
             
         </div> 
+        <div *ngIf="loged_user.type=='doctor'" class="checkuptypes flex">
+            <div class="mycheckuptypes card">
+                <div class="h2-font">Moji Pregledi</div>
+                <div *ngFor="let checkup of loged_user.doctor_info.checkups" class = "checkup-card">
+                    <div class = "checkup-field"> Naziv: {{checkup.name}}</div>
+                    <div class = "checkup-field"> Trajanje: {{checkup.duration}}min</div>
+                    <div class = "checkup-field"> Cena: {{checkup.cost}}rs</div>
+                </div>
+            </div>
+            <div class= "allcheckuptypes card">
+                <div class="h2-font">Dostupni Pregledi</div>
+                <form>
+                    <div *ngFor="let checkup of all_checkups" class = "checkup-card-form card" [class.checkup-card-form-clicked] = "checkup.isClicked" (click) = "toggleCheckUp(checkup)">
+                        <div class = "checkup-field"> Naziv: {{checkup.name}}</div>
+                        <div class = "checkup-field"> Trajanje: {{checkup.duration}}min</div>
+                        <div class = "checkup-field"> Cena: {{checkup.cost}}rs</div>
+                    </div> 
+                    <button class="btn-green" (click)="updateCheckUps()">Dodaj preglede</button>
+                    <p class="message"> {{message}}</p>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 </div>

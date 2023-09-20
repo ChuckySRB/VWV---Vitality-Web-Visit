@@ -3,13 +3,26 @@ import CheckUpType from "../models/checkuptypes"
 
 export class CheckUpTypesCotroller{
     addCheckUpType = (req: express.Request, res: express.Response)=>{
-        const newCheckUpTypeData = req.body; 
+        const {
+            specialization,
+            name,
+            duration,
+            cost,
+          } = req.body;
+        
+        const status = 'pending'
 
-        // Create a new CheckUpType instance using the provided data
-        const newCheckUpType = new CheckUpType(newCheckUpTypeData);
-      
+        // Create a new CheckUpType instance
+        const newCheckUpType = new CheckUpType({
+            specialization,
+            name,
+            duration,
+            cost,
+            status,
+          });
+        
         // Save the new checkup type to the database
-        newCheckUpType.save((err, savedCheckUpType) => {
+        newCheckUpType.save((err) => {
           if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Failed to add checkup type' });
@@ -40,10 +53,10 @@ export class CheckUpTypesCotroller{
     };
       
     getCheckUpTypes = (req: express.Request, res: express.Response)=>{
-        const specialization = req.query.specialization; // Assuming you're passing the specialization as a query parameter
+        const specialization = req.body.specialization; // Assuming you're passing the specialization as a query parameter
 
         // Find all confirmed checkup types for the provided specialization
-        CheckUpType.find({ specialization, status: 'confirmed' }, (err, confirmedCheckUpTypes) => {
+        CheckUpType.find({ specialization: specialization, status: 'confirmed' }, (err, confirmedCheckUpTypes) => {
           if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Failed to get confirmed checkup types' });

@@ -6,7 +6,13 @@ import CheckUpType from './checkuptypes'
 const CheckUp = new Schema({
     patient: { type: String},
     doctor: { type: String},
-    type: { type: CheckUpType},
+    type: { 
+      _id: {type: String},
+      specialization: { type: String},
+      name: { type: String},
+      duration: { type: Number},
+      cost: { type: Number},
+      status: { type: String}},
     datetime: { type: Date},
     status: { type: String}
   });

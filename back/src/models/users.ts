@@ -14,7 +14,13 @@ const User = new Schema({
         license: { type: String},
         specialization: { type: String},
         department: { type: String},
-        checkups: [{type: CheckUpType}]
+        checkups: [{ 
+            _id: {type: String},
+            specialization: { type: String},
+            name: { type: String},
+            duration: { type: Number},
+            cost: { type: Number},
+            status: { type: String}}]
     },
     image: { type: String },
     status: { type: String }

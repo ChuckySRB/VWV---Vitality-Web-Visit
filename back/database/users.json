@@ -1,58 +1,73 @@
 [
-    {
-        "username": "ChuckySRB",
-        "password" : "123",
-		"type": "patient",
-		"phone": "060/05-09-011",
-        "email" : "chucky.srb@gmail.com",
-		"name": "Časlav",
-		"surname": "Petronić",
-		"image": "",
-		"status": "active"
-    },
-    {
-        "username": "caki",
-        "password" : "123",
-		"type": "patient",
-		"phone": "0600009011",
-        "email" : "caslav.petronic@gmail.com",
-		"name": "Čaki",
-		"surname": "Čale",
-		"image": "",
-		"status": "pending"
-    },
-    {
-        "username": "RolgSRB",
-        "password" : "123",
-		"type": "doctor",
-		"phone": "+3816509011",
-        "email" : "caslavpetronic007@gmail.com",
-		"doctor_info": {
-			"license": "1054863a",
-			"specialization": "brain",
-			"department": "neurology"
-		},
-		"image": "",
-		"status": "active"
-    },
-    {
-        "username": "Zabuza",
-        "password" : "123",
-		"type": "doctor",
-		"phone": "+38169011",
-        "email" : "zabuza@gmail.com",
-		"doctor_info": {
-			"license": "1054863a",
-			"specialization": "eyes",
-			"department": "ophthalmology"
-		},
-		"image": "",
-		"status": "active"
-    },
 	{
-        "username": "Admin",
-        "password" : "admin123",
-		"type": "menager",
-        "email" : "admin@gmail.com"
-    }
-]
+	  "username": "john_doe",
+	  "password": "Sifra123?",
+	  "type": "patient",
+	  "email": "john@example.com",
+	  "phone": "123-456-7890",
+	  "name": "John",
+	  "surname": "Doe",
+	  "doctor_info": null,
+	  "image": "../../../assets/image/user_default.png",
+	  "status": "active"
+	},
+	{
+	  "username": "dr_smith",
+	  "password": "Sifra123?",
+	  "type": "doctor",
+	  "email": "smith@example.com",
+	  "phone": "987-654-3210",
+	  "name": "Dr. Smith",
+	  "surname": "",
+	  "doctor_info": {
+		"license": "12345",
+		"specialization": "Cardiology",
+		"department": "Beograd",
+		"checkups": []
+	  },
+	  "image": "../../../assets/image/doctor_default.png",
+	  "status": "active"
+	},
+	{
+	  "username": "alice_johnson",
+	  "password": "Sifra123?",
+	  "type": "patient",
+	  "email": "alice@example.com",
+	  "phone": "555-123-4567",
+	  "name": "Alice",
+	  "surname": "Johnson",
+	  "doctor_info": null,
+	  "image": "../../../assets/image/user_default.png",
+	  "status": "active"
+	},
+	{
+	  "username": "dr_brown",
+	  "password": "Sifra123?",
+	  "type": "doctor",
+	  "email": "brown@example.com",
+	  "phone": "777-888-9999",
+	  "name": "Dr. Brown",
+	  "surname": "",
+	  "doctor_info": {
+		"license": "54321",
+		"specialization": "Dermatology",
+		"department": "Loznica",
+		"checkups": []
+	  },
+	  "image": "../../../assets/image/doctor_default.png",
+	  "status": "active"
+	},
+	{
+	  "username": "bob_smith",
+	  "password": "Sifra123?",
+	  "type": "patient",
+	  "email": "bob@example.com",
+	  "phone": "111-222-3333",
+	  "name": "Bob",
+	  "surname": "Smith",
+	  "doctor_info": null,
+	  "image": "../../../assets/image/user_default.png",
+	  "status": "active"
+	}
+  ]
+  

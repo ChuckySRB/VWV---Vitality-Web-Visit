@@ -4,7 +4,17 @@ import CheckUp from './checkups'
 
 // CheckUp model
 const Report = new Schema({
-    checkup: { type: CheckUp},
+    checkup: {patient: { type: String},
+      doctor: { type: String},
+      type: { 
+        _id: {type: String},
+        specialization: { type: String},
+        name: { type: String},
+        duration: { type: Number},
+        cost: { type: Number},
+        status: { type: String}},
+      datetime: { type: Date},
+      status: { type: String} },
     reason_for_comming: {type: String},
     diagnose: {type: String},
     terrapy: {type: String},

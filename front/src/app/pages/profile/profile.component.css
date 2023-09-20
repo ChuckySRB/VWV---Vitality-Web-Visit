@@ -1,7 +1,7 @@
 .profile{
     background-color: var(--dark-accent);
     color: var(--light);
-    width: 600px;
+    width: 40%;
     display: flex;
     padding: 25px;
     margin: 20px;
@@ -57,17 +57,79 @@
     margin: 55px;;
 }
 
+.mycheckuptypes, .allcheckuptypes{
+    background-color: var(--light-accent);
+    color: var(--light);
+    width: 350px;
+    display: flex;
+    padding: 25px;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.h2-font{
+    padding: 20px;
+    line-height: 1.2;
+}
+
+.checkup-card{
+    padding: 5px;
+    margin:2px;
+    border: solid 2px var(--light);
+    border-radius: 15px;
+}
+
+.checkup-card-form{
+    background-color: var(--dark-accent);
+    padding: 5px;
+    margin: 17px 4px;
+}
+
+.checkup-card-form-clicked, .checkup-card-form:hover{
+    margin: 17px 0px;
+    background-color: var(--dark-accent-light);
+}
+.checkup-card-form-clicked{
+    border: solid 3px var(--keppel-light)
+}
+.checkup-field{
+    padding: 4px;
+}
+
+
 @media  (max-width: 640px) {
     .profile {
         width: 95%;
-        margin: 0;
     }
 
     .main {
         margin: 50px 0px 50px 0px;
     }
     
+    .h2-font{
+        font-size: 27px;
+        padding: 8px;
+    }
+
     .image{
         width: 300px;
     }
+}
+@media  (max-width: 1275px) {
+    .main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile{
+        width: 600px;
+        
+    }
+
+}@media  (max-width: 775px) {
+    .checkuptypes{
+        flex-direction: column;
+        justify-items: center;
+    }
+
 }

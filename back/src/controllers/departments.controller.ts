@@ -33,8 +33,8 @@ export class DepartmentsController{
         });
     }
     deleteDepartment = (req: express.Request, res: express.Response)=>{
-        const { department } = req.body; // Assuming you're sending the department name in the request body
-
+        const { department } = req.body; 
+        
         // Delete the department with the provided name
         Department.deleteOne({ name: department }, (err) => {
           if (err) {

@@ -23,8 +23,31 @@ export class UsersCotroller{
                 name: user.name,
                 surname: user.surname,
                 doctor_info: user.doctor_info,
-                image: user.image,
-                status: "pending"   
+                image: user.image  
+            })
+
+        })
+    }
+        getDoctor = (req: express.Request, res: express.Response)=>{
+        let username = req.body.username;
+        User.findOne({'username': username, 'type': 'doctor'}, (err, user) => {
+            if(err) console.log(err);
+            else if (!user){
+                res.json({'message': "Doktor sa datim korisnickim imenom ne postoji!"})
+            }
+            else if (user.status != "active") {
+                console.log("User not active!")
+                res.json({'message': "User not active!"})
+            }
+            else res.json({
+                username: user.username,
+                email: user.email,
+                type: user.type,
+                phone: user.phone,
+                name: user.name,
+                surname: user.surname,
+                doctor_info: user.doctor_info,
+                image: user.image 
             })
 
         })
@@ -67,6 +90,9 @@ export class UsersCotroller{
                     let name =  req.body.name
                     let surname = req.body.surname
                     let image = req.body.image
+                    if (!image){
+                        image = (type == 'user') ? "../../../assets/image/user_default.png" : "../../../assets/image/doctor_default.png"
+                    }
                     let doc_info = null
                     if (type == "doctor"){
                         doc_info = {

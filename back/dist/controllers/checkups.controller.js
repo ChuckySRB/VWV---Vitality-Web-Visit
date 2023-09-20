@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CheckUpsCotroller = void 0;
 const checkups_1 = __importDefault(require("../models/checkups"));
+const reports_1 = __importDefault(require("../models/reports"));
 class CheckUpsCotroller {
     constructor() {
         this.getAllCheckUps = (req, res) => {
@@ -16,6 +17,26 @@ class CheckUpsCotroller {
             });
         };
         this.createCheckUp = (req, res) => {
+            const { patient, doctor, type, datetime } = req.body;
+            const status = "scheduled";
+            // Create a new CheckUp instance based on your CheckUp model
+            const newCheckUp = new checkups_1.default({
+                patient,
+                doctor,
+                type,
+                datetime,
+                status,
+            });
+            // Save the new CheckUp document to the database
+            newCheckUp.save((err) => {
+                if (err) {
+                    // Handle the error if the save operation fails
+                    console.error(err);
+                    return res.status(500).json({ error: 'Failed to create CheckUp' });
+                }
+                // If successful, send the created CheckUp document as a response
+                res.status(201).json({ message: 'success' });
+            });
         };
         this.getMyCheckUps = (req, res) => {
             const type = req.body.type;
@@ -37,92 +58,37 @@ class CheckUpsCotroller {
                 });
             }
         };
-        /*
-        getOrders = (req: express.Request, res: express.Response)=>{
-            let user = req.body.user
-            if (user == null){
-                Orders.find({}, (err, orders)=>{
-                    if (err) console.log(err)
-                    else
-                        res.json(orders)
-                })
-            }
-            else {
-    
-                Orders.find({'user': user}, (err, orders)=>{
-                    if (err) console.log(err)
-                    else
-                        res.json(orders)
-                })
-        }
-        }
-    
-        acceptOrder = (req: express.Request, res: express.Response)=>{
-            Orders.updateOne({'id': req.body.id}, {$set:{'status': req.body.status}}, (err, resp)=>{
-                if (err) console.log(err)
-                else res.json({'message': 'Dodato'})
-            })
-        }
-        makeOrder = (req: express.Request, res: express.Response)=>{
-            let user = req.body.user
-            let size = req.body.size
-            let extras = req.body.extras
-            for (let i of extras){
-                Extras.findOne({"name":i}, (err, extra)=>{
-                    if(err) console.log(err)
-                    else if (extra){
-                        let num = extra.amount-1
-                        Extras.updateOne({"name":i}, {$set:{"amount":num}}, (err, resp)=>{
-                            if(err) console.log(err)
-                        })
+        this.allMyReportsAndCheckUps = (req, res) => {
+            const username = req.params.username; // Assuming you're sending the username as a route parameter
+            // Find all checkups where checkup.patient = username && checkup.status = 'scheduled'
+            checkups_1.default.find({ patient: username, status: 'scheduled' }, (checkUpErr, checkUps) => {
+                if (checkUpErr) {
+                    console.error(checkUpErr);
+                    return res.status(500).json({ error: 'Failed to retrieve checkups' });
+                }
+                // Find all reports where report.checkup.patient = username
+                reports_1.default.find({ 'checkup.patient': username }, (reportErr, reports) => {
+                    if (reportErr) {
+                        console.error(reportErr);
+                        return res.status(500).json({ error: 'Failed to retrieve reports' });
                     }
-                    else console.log(i)
-                    
-                })
-            }
-    
-            Orders.aggregate(
-                [{
-                    $group:{
-                        _id: null,
-                        maxId:{
-                            $max: '$id'
-                        }
-                    },
-                    
-                }, {
-                    $project:{
-                        _id: 0
-                    }
-                }], (error, max_order) =>{
-                    if (error) console.log(error)
-                    else{
-    
-                        console.log(max_order)
-                        let ID = max_order[0].maxId+1
-                        let order = new Orders(
-                        {
-                            id: ID,
-                            user: user,
-                            size: size,
-                            status: "nova",
-                            extras: extras,
-                        }
-                    )
-                
-                        order.save((err, resp)=>{
-                            if(err){
-                                console.log(err)
-                                res.json({"message": "error"})
-                            }
-                            else res.json({"message": "Dodata"})
-                        })}
-                    }
-            )
-    
-            
-        }
-        */
+                    // Return the checkups and reports as JSON response
+                    res.json({ checkups: checkUps, reports: reports });
+                });
+            });
+        };
+        this.cancelCheckUp = (req, res) => {
+            const checkUpId = req.body._id; // Assuming you're sending the _id of the checkup to cancel in the request body
+            // Update the status of the checkup with the provided _id to 'canceled'
+            checkups_1.default.findByIdAndUpdate(checkUpId, { $set: { status: 'canceled' } }, { new: true }, (err) => {
+                if (err) {
+                    console.error(err);
+                    return res.status(500).json({ error: 'Failed to cancel checkup' });
+                }
+                // If successful, send the updated checkup as a response
+                res.json({ message: 'success' });
+            });
+        };
     }
 }
 exports.CheckUpsCotroller = CheckUpsCotroller;

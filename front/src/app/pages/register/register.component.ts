@@ -35,7 +35,10 @@ export class RegisterComponent {
 
   Register(){
     if (this.password != this.cpassword){
-
+      this.message = "Lozinke se ne poklapaju!"
+    }
+    else if (!this.username || !this.email){
+      this.message = "EMail i Username su obavezni!"
     }
     else{
       this.userService.register(this.username, this.password, this.email, this.type, this.phone, this.name, this.surname, this.imageUrl, this.license, this.specialization, this.department).subscribe((message: {message: string})=>{

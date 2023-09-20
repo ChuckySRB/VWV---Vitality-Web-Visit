@@ -1,0 +1,55 @@
+
+  
+    <input class = "input-dark" matInput (keyup)="applyFilter($event)" placeholder="Pretraga..." #input>
+
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      
+      <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th class="row-header" mat-header-cell *matHeaderCellDef mat-sort-header> Ime </th>
+          <td class = "field" mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="duration">
+          <th class="row-header" mat-header-cell *matHeaderCellDef mat-sort-header> Prezime </th>
+          <td class = "field" mat-cell *matCellDef="let element"> {{element.duration}} </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th class="row-header" mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+          <td class = "field" mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="cost">
+        <th class="row-header" mat-header-cell *matHeaderCellDef mat-sort-header> EMail </th>
+        <td class = "field" mat-cell *matCellDef="let element"> {{element.cost}} </td>
+      </ng-container>
+      <!-- Symbol Column -->
+       <ng-container matColumnDef="specialization">
+          <th class="row-header" mat-header-cell *matHeaderCellDef mat-sort-header> Telefon </th>
+          <td class = "field" mat-cell *matCellDef="let element"> {{element.specialization}} </td>
+      </ng-container>
+         <!-- Symbol Column -->
+      <ng-container matColumnDef="controls">
+          <th class="row-header" mat-header-cell *matHeaderCellDef mat-sort-header> Kontrole </th>
+          <td class = "field" mat-cell *matCellDef="let element"> 
+            <div class="button-container">
+            <button class = "edit-accept" mat-mini-fab color="success" (click)="updateCheckUpType(element, 'confirmed')">
+              <span class="material-icons">check</span>
+            </button>
+            </div>
+            <div class="button-container">
+                <button class = "edit-close" mat-mini-fab color="danger" (click)="updateCheckUpType(element, 'banned')">
+                  <span class="material-icons">close</span>
+                </button>
+            </div>
+    </td>
+        </ng-container>
+      <tr id="row-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr id="row" class = "element-row field hover-row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  

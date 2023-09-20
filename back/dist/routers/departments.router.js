@@ -9,5 +9,7 @@ const departmentRouter = express_1.default.Router();
 departmentRouter.route('/add').post((req, res) => new departments_controller_1.DepartmentsController().addDepartment(req, res));
 departmentRouter.route('/all').get((req, res) => new departments_controller_1.DepartmentsController().allDepartments(req, res));
 departmentRouter.route('/delete').post((req, res) => new departments_controller_1.DepartmentsController().deleteDepartment(req, res));
+departmentRouter.route('/specialization/add').post((req, res) => new departments_controller_1.DepartmentsController().addSpezialization(req, res));
+departmentRouter.route('/specialization/all').get((req, res) => new departments_controller_1.DepartmentsController().allSpezializations(req, res));
 exports.default = departmentRouter;
 //# sourceMappingURL=departments.router.js.map

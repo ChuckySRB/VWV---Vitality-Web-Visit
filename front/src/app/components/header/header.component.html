@@ -5,9 +5,14 @@
         <li *ngIf="user=='patient' || user=='doctor'"><a href="profil" class="nav-link">Profil</a></li>
         <li *ngIf="user=='patient' || user=='none'"><a href="lekari" class="nav-link">Lekari</a></li>
         <li *ngIf="user=='doctor'"><a href="lekar/pregledi" class="nav-link">Pregledi</a></li>     
+        <li *ngIf="user=='manager'"><a href="admin/pacijenti" class="nav-link">Pacijenti</a></li> 
+        <li *ngIf="user=='manager'"><a href="admin/lekari" class="nav-link">Lekari</a></li> 
+        
         <li id = "logo" class="navbar-logo">
             <a href=""> <img src="../../../assets/logo/vwv-text.png" alt="Logo"></a>
         </li>
+        <li *ngIf="user=='manager'"><a href="admin/pregledi" class="nav-link">Pregledi</a></li> 
+        <li *ngIf="user=='manager'"><a href="admin/ostalo" class="nav-link">Ostalo</a></li> 
         <li *ngIf="user=='patient'"><a href="pacijent/pregledi" class="nav-link">Pregledi</a></li>
         <li *ngIf="user=='doctor'"><a href="lekar/razno" class="nav-link">Razno</a></li>
         <li *ngIf="user=='none' || user=='doctor'"></li>

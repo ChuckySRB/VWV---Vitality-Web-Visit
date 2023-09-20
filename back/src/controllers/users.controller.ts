@@ -72,7 +72,7 @@ export class UsersCotroller{
                 let lenght = password.length
                 let isNotValidLenght = lenght < 8 || lenght > 12
                 let isValidDouble = true
-                let status = "active"
+                let status = "pending"
                 for(let i = 0, j = 1; j < lenght; i++, j++){
                     if (password[i] == password[j]){
                         isValidDouble = false
@@ -95,6 +95,7 @@ export class UsersCotroller{
                     }
                     let doc_info = null
                     if (type == "doctor"){
+                        status = "active"
                         doc_info = {
                             license: req.body.license,
                             specialization: req.body.specialization,
@@ -138,12 +139,23 @@ export class UsersCotroller{
             }
         })
     }
+    allPatients = (req: express.Request, res: express.Response)=>{
+        User.find({'type':'patient'}).select('-password').exec((err, doctors) => {
+            if (err){
+                console.log(err);
+                res.status(400).json({"message": "error"})
+            }
+            else{
+                res.json(doctors)
+            }
+        })
+    }
 
     confirmUser = (req: express.Request, res: express.Response)=>{
-        const { username } = req.body;
+        const { username, status } = req.body;
 
         // Update the user status to 'active'
-        User.updateOne({ username }, { status: 'active' }, (err, result) => {
+        User.updateOne({ username }, { status: status }, (err, result) => {
           if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Failed to confirm user' });

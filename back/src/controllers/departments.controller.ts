@@ -1,5 +1,6 @@
 import express, { Response } from "express"
 import Department from "../models/department"
+import Specialization from "../models/specialization"
 
 export class DepartmentsController{
 
@@ -11,14 +12,14 @@ export class DepartmentsController{
         const newDepartment = new Department(newDepartmentData);
 
         // Save the new department to the database
-        newDepartment.save((err, savedDepartment) => {
+        newDepartment.save((err) => {
             if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Failed to add department' });
             }
 
             // If successful, send the saved department as a response
-            res.json(savedDepartment);
+            res.json({message:"success"});
         });
     }
     allDepartments = (req: express.Request, res: express.Response)=>{
@@ -46,4 +47,33 @@ export class DepartmentsController{
           res.json({ message: 'Department deleted successfully' });
         });
     }
+
+    allSpezializations = (req: express.Request, res: express.Response)=>{
+      Specialization.find({}, (err, specs) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Failed to get specializations' });
+          }
+      
+          // If successful, send the departments as a response
+          res.json(specs);
+      });
+  }
+  addSpezialization = (req: express.Request, res: express.Response)=>{
+    const newSpec = req.body
+    
+    // Create a new Specialization instance using the provided data
+    const spec = new Specialization(newSpec);
+
+    // Save the new Specialization to the database
+    spec.save((err) => {
+        if (err) {
+        console.error(err);
+        return res.status(500).json({ error: 'Failed to add department' });
+        }
+
+        // If successful, send the saved Specialization as a response
+        res.json({message:"success"});
+    });
+}
 }

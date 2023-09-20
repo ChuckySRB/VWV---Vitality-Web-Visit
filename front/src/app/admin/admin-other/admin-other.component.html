@@ -1,0 +1,46 @@
+<div class = "background">
+    <div class = "box column background-overlay">
+        <div class="flex">
+            <div>
+                <div class = "h-font">Dodaj Specijalizaciju</div>
+                <div class="card">
+                <form>
+                    <div class="label">Specijalizacija</div>
+                    <div class="input"><input type="text" class="input-dark" placeholder="naziv" name = "specialization" [(ngModel)] = "specialization"></div>
+                    <button class="btn-green" name = "spec" (click) = "addSpecialization()">Add</button>
+                    <p class ="message">{{message}}</p>
+                </form>
+                </div>     
+            </div>
+            <div>
+            <div class = "h-font">Specijalizacije</div>
+            <div class="card-list">
+                <p class = "input" *ngFor = "let spec of specializations">{{spec.name}}</p>                    
+            </div>
+        </div>
+        </div>
+        <div class="flex">
+            <div>
+                <div class = "h-font">Dodaj Departman</div>
+                <div class="card">
+                    
+            
+                <form>
+                    <div class="label">Departman</div>
+                    <div class="input"><input type="text" class="input-dark" placeholder="naziv" name = "department" [(ngModel)] = "department"></div>
+                    <button class="btn-green" name = "dep" (click) = "addDepartment()">Add</button>
+                    <p class ="message">{{message}}</p>
+                </form>
+                </div>       
+            </div> 
+            <div>
+                <div class = "h-font">Departmani</div>
+                    <div class="card-list">
+
+                        <p class = "input" *ngFor = "let dep of departments">{{dep.name}}</p>
+                            
+                    </div> 
+            </div> 
+        </div>
+    </div>
+    </div>

@@ -37,22 +37,22 @@ export class CheckUpsCotroller{
 
     getMyCheckUps = (req: express.Request, res: express.Response)=>{
         const type = req.body.type;
-        const user = req.body.user;
+        const user = req.body.username;
         if (type == 'doctor'){
-            CheckUp.find({'doctor':user}).exec((err, checkUps)=>{
+            CheckUp.find({'doctor':user, 'status': 'scheduled'}).exec((err, checkUps)=>{
                 if (err) console.log(err)
                 else res.json(checkUps)
             })
         }
         else {
-            CheckUp.find({'patient':user}).exec((err, checkUps)=>{
+            CheckUp.find({'patient':user, 'status': 'scheduled'}).exec((err, checkUps)=>{
                 if (err) console.log(err)
                 else res.json(checkUps)
             })
         }
     }
     allMyReportsAndCheckUps = (req: express.Request, res: express.Response)=>{
-        const username = req.params.username; // Assuming you're sending the username as a route parameter
+        const username = req.body.username; // Assuming you're sending the username as a route parameter
 
         // Find all checkups where checkup.patient = username && checkup.status = 'scheduled'
         CheckUp.find({ patient: username, status: 'scheduled' }, (checkUpErr, checkUps) => {

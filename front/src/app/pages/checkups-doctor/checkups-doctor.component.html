@@ -1,1 +1,52 @@
-<p>checkups-doctor works!</p>
+<div class="background">
+    <div class = "background-overlay">
+        <div class="flex-center main">
+          
+                <div class= "allcheckups card">
+                    <div class="h2-font">Predstojeći pregledi</div>
+                    <form>
+                        <div *ngFor="let checkup of all_checkups" class = "checkup-card" [class.checkup-card-form-clicked] = "checkup.isClicked" (click) = "toggleCheckUp(checkup)">
+                            <div class = "checkup-field"> Pacijent: {{checkup.patient}}</div>
+                            <div class = "checkup-field"> Naziv: {{checkup.type.name}}</div>
+                            <div class = "checkup-field"> Trajanje: {{checkup.type.duration}}min</div>
+                            <div class = "checkup-field"> Cena: {{checkup.type.cost}}rs</div>
+                            <div class = "checkup-field"> Datum: {{checkup.datetime}}</div>
+                            <button class="btn-green" (click)="cancelCheckUp(checkup._id)">Otkaži</button>
+                        </div>                    
+                    </form>
+                </div>
+                <div class="report card">
+                    <div class="h2-font">Izveštaj</div>
+                    <div class = "time">
+                        <div class = "hours"> Razlog Dolaska: </div>
+                        <input class="input-dark" type="text" id="reason" name="reason" [(ngModel)]="reason_for_comming">
+                    </div>
+                    <div class = "time">
+                        <div class = "hours"> Diagonoza: </div>
+                        <input class="input-dark" type="text" id="diagnose" name="diagnose" [(ngModel)]="diagnose"></div>
+                     <div class = "time">   
+                        <div class = "minutes"> Terapija: </div>     
+                        <input class="input-dark" type="text" id="terrapy" name="terrapy" [(ngModel)]="terrapy">
+                    </div>
+                    <div class = "time">
+                        <div class = "hours"> Sledeći pregled: </div>
+                        <mat-card color="primary" class="demo-inline-calendar-card">
+                            <mat-calendar color="primary" [(selected)]="next_checkup"></mat-calendar>
+                        </mat-card>    
+                    </div>
+                    <button class="btn-green" (click)="makeReport()">Napiši izveštaj</button>
+                        <p class="message"> {{message}}</p>
+                </div>
+                <div class="reports card">
+                    <div class="h2-font">Izveštaji za pacijenta</div>
+                    <div *ngFor="let report of all_reports" class = "report-card">
+                        <div class = "checkup-field"> Razlog Dolaska: {{report.reason_for_comming}}</div>
+                        <div class = "checkup-field"> Diagnoza: {{report.diagnose}}</div>
+                        <div class = "checkup-field"> Terapija: {{report.terrapy}}rs</div>
+                        <div class = "checkup-field"> Sledeci Pregled: {{report.next_checkup}}rs</div>
+                    </div>
+                </div>
+            </div> 
+      
+    </div>
+</div>

@@ -18,7 +18,7 @@ export class LoginComponent {
 
   Login(){
     this.userService.login(this.username, this.password).subscribe((user: User)=>{
-      if(user!=null && !user.message){
+      if(user!=null && !user.message && user.type!='manager'){
         localStorage.setItem('user', JSON.stringify(user))
         this.userService.setShowElement(user.type)
         //location.reload();

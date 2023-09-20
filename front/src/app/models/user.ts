@@ -15,4 +15,5 @@ export class User{
     };
     image?: string;
     message?: string;
+    status?: string;
 }

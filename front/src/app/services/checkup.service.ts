@@ -36,7 +36,7 @@ export class CheckupService {
     return this.http.post(`${this.uri}/mycheckups`, data)
   }
 
-  getMyCheckUpsAndReports(username: string, type: string){
+  getMyCheckUpsAndReports(username: string){
     const data = {
       username: username
     }

@@ -1,1 +1,29 @@
-<p>checkups-patient works!</p>
+<div class="background">
+    <div class = "background-overlay">
+            <div class="flex-center main">
+        <div class="checkuptypes flex">
+            <div class="mycheckuptypes card">
+                <div class="h2-font">Zakazani pregledi</div>
+                <div *ngFor="let checkup of all_checkups" class = "checkup-card">
+                    <div class = "checkup-field"> Lekar: {{checkup.doctor}}</div>
+                    <div class = "checkup-field"> Naziv: {{checkup.type.name}}</div>
+                    <div class = "checkup-field"> Trajanje: {{checkup.type.duration}}min</div>
+                    <div class = "checkup-field"> Cena: {{checkup.type.cost}}rs</div>
+                    <div class = "checkup-field"> Datum: {{checkup.datetime}}</div>
+                    <button class="btn-green" (click)="cancelCheckUp(checkup._id)">Otkaži</button>
+                </div>
+                <p class="message">{{message}}</p>
+            </div>
+            <div class="mycheckuptypes card">
+                <div class="h2-font">Izveštaji sa pregleda</div>
+                <div *ngFor="let report of all_reports" class = "report-card">
+                    <div class = "checkup-field"> Razlog Dolaska: {{report.reason_for_comming}}</div>
+                    <div class = "checkup-field"> Diagnoza: {{report.diagnose}}</div>
+                    <div class = "checkup-field"> Terapija: {{report.terrapy}}rs</div>
+                    <div class = "checkup-field"> Sledeci Pregled: {{report.next_checkup}}rs</div>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+</div>

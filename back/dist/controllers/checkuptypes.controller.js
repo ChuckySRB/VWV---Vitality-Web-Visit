@@ -30,8 +30,9 @@ class CheckUpTypesCotroller {
         };
         this.confirmCheckUpType = (req, res) => {
             const checkUpTypeId = req.body._id; // Assuming you're sending the _id of the checkup type to confirm in the request body
+            const status = req.body.status;
             // Update the status of the checkup type with the provided _id to 'confirmed'
-            checkuptypes_1.default.findByIdAndUpdate(checkUpTypeId, { $set: { status: 'confirmed' } }, { new: true }, (err, updatedCheckUpType) => {
+            checkuptypes_1.default.findByIdAndUpdate(checkUpTypeId, { $set: { status: status } }, { new: true }, (err, updatedCheckUpType) => {
                 if (err) {
                     console.error(err);
                     return res.status(500).json({ error: 'Failed to confirm checkup type' });
@@ -50,6 +51,16 @@ class CheckUpTypesCotroller {
                 }
                 // If successful, send the confirmed checkup types as a response
                 res.json(confirmedCheckUpTypes);
+            });
+        };
+        this.allCheckUpTypes = (req, res) => {
+            checkuptypes_1.default.find({}, (err, checkups) => {
+                if (err) {
+                    console.error(err);
+                    return res.status(500).json({ error: 'Failed to get checkups' });
+                }
+                // If successful, send the checkups as a response
+                res.json(checkups);
             });
         };
     }

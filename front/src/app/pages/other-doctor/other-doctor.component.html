@@ -1,1 +1,21 @@
-<p>other-doctor works!</p>
+<div class = "background">
+    <div class = "box column background-overlay">
+     
+        <div class = "h-font">Predlog novog pregleda</div>
+        <div class="card">
+            
+    
+        <form>
+            <div class="label">Naziv</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="naziv" name = "username" [(ngModel)] = "name"/></div>
+            <div class="label">Trajanje (minuti)</div>
+            <div class="input"><input type="number" class="input-dark" placeholder="trajanje" name = "duration" [(ngModel)] = "duration"/></div>
+            <div class="label">Cena (dinari)</div>
+            <div class="input"><input type="number" class="input-dark" placeholder="cena" name = "cost" [(ngModel)] = "cost"/></div>
+            <button class="btn-green" name = "register" (click) = "createType()">Pošalji</button>
+            <p class= "message">{{message}}</p>
+        </form>
+                 
+        </div>  
+    </div>
+    </div>

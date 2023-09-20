@@ -20,6 +20,9 @@ userRouter.route('/doctor/update/checkups').post(
 userRouter.route('/doctors').get(
     (req, res) => new UsersCotroller().allDoctors(req, res)
 )
+userRouter.route('/patients').get(
+    (req, res) => new UsersCotroller().allPatients(req, res)
+)
 userRouter.route('/doctor').post(
     (req, res) => new UsersCotroller().getDoctor(req, res)
 )

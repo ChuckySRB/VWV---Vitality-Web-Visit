@@ -22,6 +22,18 @@ export class DepartmentService {
     return this.http.get(`${this.uri}/all`)
   }
 
+  addSpecialization(name: string){
+    const data = {
+      name: name
+    }
+
+    return this.http.post(`${this.uri}/specialization/add`, data)
+  }
+
+  allSpecialization(){
+    return this.http.get(`${this.uri}/specialization/all`)
+  }
+
   delete(name: string){
     const data = {
       name: name

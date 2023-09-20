@@ -1,0 +1,19 @@
+<div class = "background">
+    <div class = "box column background-overlay">
+     
+        <div class = "h-font">Log In Menadžer</div>
+        <div class="card">
+            
+    
+        <form>
+            <div class="label">Username</div>
+            <div class="input"><input type="text" class="input-dark" placeholder="username" name = "login" [(ngModel)] = "username"/></div>
+            <div class="label">Password</div>
+            <div class="input"><input type="password" class="input-dark" placeholder="password" name = "login" [(ngModel)] = "password"/></div>
+            <button class="btn-green" name = "login" (click) = "Login()">Log In</button>
+            <p class ="message">{{message}}</p>
+        </form>
+                 
+        </div>  
+    </div>
+    </div>

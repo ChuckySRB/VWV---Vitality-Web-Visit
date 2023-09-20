@@ -75,7 +75,7 @@ class UsersCotroller {
                     let lenght = password.length;
                     let isNotValidLenght = lenght < 8 || lenght > 12;
                     let isValidDouble = true;
-                    let status = "active";
+                    let status = "pending";
                     for (let i = 0, j = 1; j < lenght; i++, j++) {
                         if (password[i] == password[j]) {
                             isValidDouble = false;
@@ -97,6 +97,7 @@ class UsersCotroller {
                         }
                         let doc_info = null;
                         if (type == "doctor") {
+                            status = "active";
                             doc_info = {
                                 license: req.body.license,
                                 specialization: req.body.specialization,
@@ -139,10 +140,21 @@ class UsersCotroller {
                 }
             });
         };
+        this.allPatients = (req, res) => {
+            users_1.default.find({ 'type': 'patient' }).select('-password').exec((err, doctors) => {
+                if (err) {
+                    console.log(err);
+                    res.status(400).json({ "message": "error" });
+                }
+                else {
+                    res.json(doctors);
+                }
+            });
+        };
         this.confirmUser = (req, res) => {
-            const { username } = req.body;
+            const { username, status } = req.body;
             // Update the user status to 'active'
-            users_1.default.updateOne({ username }, { status: 'active' }, (err, result) => {
+            users_1.default.updateOne({ username }, { status: status }, (err, result) => {
                 if (err) {
                     console.error(err);
                     return res.status(500).json({ error: 'Failed to confirm user' });

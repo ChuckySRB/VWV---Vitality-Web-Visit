@@ -9,5 +9,6 @@ const checkUpTypesRouter = express_1.default.Router();
 checkUpTypesRouter.route('/add').post((req, res) => new checkuptypes_controller_1.CheckUpTypesCotroller().addCheckUpType(req, res));
 checkUpTypesRouter.route('/confirm').post((req, res) => new checkuptypes_controller_1.CheckUpTypesCotroller().confirmCheckUpType(req, res));
 checkUpTypesRouter.route('/getMy').post((req, res) => new checkuptypes_controller_1.CheckUpTypesCotroller().getCheckUpTypes(req, res));
+checkUpTypesRouter.route('/all').get((req, res) => new checkuptypes_controller_1.CheckUpTypesCotroller().allCheckUpTypes(req, res));
 exports.default = checkUpTypesRouter;
 //# sourceMappingURL=checkuptype.router.js.map

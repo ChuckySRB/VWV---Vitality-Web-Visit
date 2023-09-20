@@ -22,13 +22,18 @@ export class CheckuptypeService {
 
   }
 
-  confirm(_id: string){
+  confirm(_id: string, status: string){
     const data = {
       _id: _id,
+      status: status
     }
 
     return this.http.post(`${this.uri}/confirm`, data)
 
+  }
+
+  all(){
+    return this.http.get(`${this.uri}/all`)
   }
   
   getMy(specialization: string){

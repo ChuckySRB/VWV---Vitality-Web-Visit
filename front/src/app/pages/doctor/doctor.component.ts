@@ -52,6 +52,7 @@ export class DoctorComponent implements OnInit{
       checkup.isClicked = !checkup.isClicked;
       if (this.checkuptype && this.checkuptype._id != checkup._id){
         this.checkuptype.isClicked = false;
+        this.checkuptype = checkup
       }
       else if (this.checkuptype && this.checkuptype._id == checkup._id){
         this.checkuptype = null

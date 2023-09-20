@@ -28,6 +28,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminPatientsComponent } from './admin/admin-patients/admin-patients.component';
+import { AdminCheckupsComponent } from './admin/admin-checkups/admin-checkups.component';
+import { AdminDoctorsComponent } from './admin/admin-doctors/admin-doctors.component';
+import { AdminOtherComponent } from './admin/admin-other/admin-other.component';
+import { PatientsTableComponent } from './components/patients-table/patients-table.component';
+import { CheckupsTableComponent } from './components/checkups-table/checkups-table.component';
 
 
 @NgModule({
@@ -45,6 +52,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     OtherDoctorComponent,
     NotificationsPatientComponent,
     DoctorComponent,
+    AdminLoginComponent,
+    AdminPatientsComponent,
+    AdminCheckupsComponent,
+    AdminDoctorsComponent,
+    AdminOtherComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -61,7 +74,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCardModule,
     MatNativeDateModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    PatientsTableComponent,
+    CheckupsTableComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

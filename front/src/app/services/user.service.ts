@@ -59,6 +59,11 @@ export class UserService {
     return this.http.get(`${this.uri}/doctors`)
   }
 
+   getPatients(){
+    return this.http.get(`${this.uri}/patients`)
+  }
+
+
   getDoctor(username: string){
     const data = {
       username: username
@@ -67,9 +72,10 @@ export class UserService {
     return this.http.post(`${this.uri}/doctor`, data)
   }
 
-  confirmUser(username: string){
+  confirmUser(username: string, status: string){
     const data = {
       username: username,
+      status: status
     }
     return this.http.post(`${this.uri}/confirm`, data)
   }

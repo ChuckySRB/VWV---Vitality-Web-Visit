@@ -10,6 +10,11 @@ import { OtherDoctorComponent } from './pages/other-doctor/other-doctor.componen
 import { DoctorsComponent } from './pages/doctors/doctors.component';
 import { NotificationsPatientComponent } from './pages/notifications-patient/notifications-patient.component';
 import { DoctorComponent } from './pages/doctor/doctor.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminDoctorsComponent } from './admin/admin-doctors/admin-doctors.component';
+import { AdminCheckupsComponent } from './admin/admin-checkups/admin-checkups.component';
+import { AdminOtherComponent } from './admin/admin-other/admin-other.component';
+import { AdminPatientsComponent } from './admin/admin-patients/admin-patients.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
@@ -23,9 +28,12 @@ const routes: Routes = [
   {path: "pacijent/obaveštenja", component: NotificationsPatientComponent},
   {path: "lekar/razno", component: OtherDoctorComponent},
   {path: "lekari", component: DoctorsComponent},
-  {path: "lekari/lekar/:username", component: DoctorComponent}
-
-
+  {path: "lekari/lekar/:username", component: DoctorComponent},
+  {path: "admin/login", component: AdminLoginComponent},
+  {path: "admin/lekari", component: AdminDoctorsComponent},
+  {path: "admin/pregledi", component: AdminCheckupsComponent},
+  {path: "admin/ostalo", component: AdminOtherComponent},
+  {path: "admin/pacijenti", component: AdminPatientsComponent}
 ];
 
 @NgModule({

@@ -29,8 +29,32 @@ class UsersCotroller {
                         name: user.name,
                         surname: user.surname,
                         doctor_info: user.doctor_info,
-                        image: user.image,
-                        status: "pending"
+                        image: user.image
+                    });
+            });
+        };
+        this.getDoctor = (req, res) => {
+            let username = req.body.username;
+            users_1.default.findOne({ 'username': username, 'type': 'doctor' }, (err, user) => {
+                if (err)
+                    console.log(err);
+                else if (!user) {
+                    res.json({ 'message': "Doktor sa datim korisnickim imenom ne postoji!" });
+                }
+                else if (user.status != "active") {
+                    console.log("User not active!");
+                    res.json({ 'message': "User not active!" });
+                }
+                else
+                    res.json({
+                        username: user.username,
+                        email: user.email,
+                        type: user.type,
+                        phone: user.phone,
+                        name: user.name,
+                        surname: user.surname,
+                        doctor_info: user.doctor_info,
+                        image: user.image
                     });
             });
         };

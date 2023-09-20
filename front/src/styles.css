@@ -8,6 +8,10 @@ B14057 - HippiePink - Dark Accent
 
 */
 
+@use '@angular/material' as mat;
+
+@include mat.core();
+
 :root {
     --keppel: #33BB92;
     --light-accent: rgb(209, 182, 225);

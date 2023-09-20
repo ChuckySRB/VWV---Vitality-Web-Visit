@@ -1,1 +1,58 @@
-<p>doctor works!</p>
+<div class="background">
+    <div class = "background-overlay">
+        <div class="flex-center main">
+        <div class = "profile card">
+            <div class = "left-side flex-column">
+                <div class = "image-holder">
+                    <img class = "image" *ngIf="loged_user && loged_user.image" [src]="doctor_user.image"/>
+                    <img class = "image" *ngIf="!loged_user || !loged_user.image" href="../../../assets/image/user_default.png">
+                </div>  
+                <div class = "fullname flex">
+                    <div class = "name">{{doctor_user.name}}</div>
+                    <div class = "surname">{{doctor_user.surname}}</div>
+                    
+                </div>
+                <div *ngIf="loged_user.type == 'doctor'" class = "specialization">{{doctor_user.doctor_info.specialization}}</div>
+                <div class="email-holder flex">
+                    <span class="material-icons">mail</span>
+                    <div class="email">{{doctor_user.email}}</div>
+                   
+                </div>
+                <div class="phone-holder flex">
+                    <span class="material-icons">phone</span>
+                    <div class="phone">{{loged_user.phone}}</div>
+                </div>
+            </div>
+            
+        </div> 
+        <div class="checkuptypes flex">
+            <div class="mycheckuptypes card">
+                <div class="h2-font">Izaberi datum pregleda</div>
+                <mat-card color="primary" class="demo-inline-calendar-card">
+                    <mat-calendar color="primary" [(selected)]="checkupdate"></mat-calendar>
+                </mat-card>
+                <div class = "time">
+                    <div class = "hours"> Sati: </div>
+                    <input class="input-dark" type="number" id="hours" name="hours" [(ngModel)]="selectedHours" min="0" max="23">
+                </div>
+                 <div class = "time">   
+                    <div class = "minutes"> Minuti: </div>     
+                    <input class="input-dark" type="number" id="minutes" name="minutes" [(ngModel)]="selectedMinutes" min="0" max="59">
+                </div>
+            </div>
+            <div class= "allcheckuptypes card">
+                <div class="h2-font">Izaberi vrstu pregleda</div>
+                <form>
+                    <div *ngFor="let checkup of doctor_user.doctor_info.checkups" class = "checkup-card-form card" [class.checkup-card-form-clicked] = "checkup.isClicked" (click) = "toggleCheckUp(checkup)">
+                        <div class = "checkup-field"> Naziv: {{checkup.name}}</div>
+                        <div class = "checkup-field"> Trajanje: {{checkup.duration}}min</div>
+                        <div class = "checkup-field"> Cena: {{checkup.cost}}rs</div>
+                    </div> 
+                    <button class="btn-green" (click)="scheduleCheckUp()">Zakaži pregled</button>
+                    <p class="message"> {{message}}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

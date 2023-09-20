@@ -59,6 +59,14 @@ export class UserService {
     return this.http.get(`${this.uri}/doctors`)
   }
 
+  getDoctor(username: string){
+    const data = {
+      username: username
+    }
+
+    return this.http.post(`${this.uri}/doctor`, data)
+  }
+
   confirmUser(username: string){
     const data = {
       username: username,

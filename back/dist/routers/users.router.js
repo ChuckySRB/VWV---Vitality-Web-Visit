@@ -12,5 +12,6 @@ userRouter.route('/confirm').post((req, res) => new users_controller_1.UsersCotr
 userRouter.route('/change/data').post((req, res) => new users_controller_1.UsersCotroller().changeData(req, res));
 userRouter.route('/doctor/update/checkups').post((req, res) => new users_controller_1.UsersCotroller().updateCheckUps(req, res));
 userRouter.route('/doctors').get((req, res) => new users_controller_1.UsersCotroller().allDoctors(req, res));
+userRouter.route('/doctor').post((req, res) => new users_controller_1.UsersCotroller().getDoctor(req, res));
 exports.default = userRouter;
 //# sourceMappingURL=users.router.js.map
